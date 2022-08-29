@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  ReviewsAPI:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: DataForReviews
+      AttributeDefinitions:
+        - AttributeName: "ReviewId"
+          AttributeType: "S"
+
+      KeySchema:
+        - AttributeName: "ReviewId"
+          KeyType: "HASH"
+
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
+
+Outputs:
+  TableName:
+    Value: !Ref "ReviewsAPI"
+    Description: "Name of the newly created DynamoDB table"

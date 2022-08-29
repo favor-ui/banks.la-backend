@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  BuildingsAPI:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: DataForBuilding
+      AttributeDefinitions:
+        - AttributeName: "BuildingName"
+          AttributeType: "S"
+
+      KeySchema:
+        - AttributeName: "BuildingName"
+          KeyType: "HASH"
+
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
+
+Outputs:
+  TableName:
+    Value: !Ref "BuildingsAPI"
+    Description: "Name of the newly created DynamoDB table"

@@ -1,0 +1,66 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Action": [
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ],
+        "Resource": "arn:aws:logs:*:*:*",
+        "Effect": "Allow"
+      },
+      {
+        "Action": [
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:UpdateItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query"
+        ],
+        "Resource": ["arn:aws:dynamodb:*:*:table/DataForBookings"],
+        "Effect": "Allow"
+      },
+      {
+        "Action": [
+          "dynamodb:UpdateItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query"
+        ],
+        "Resource": ["arn:aws:dynamodb:*:*:table/ApartmentData"],
+        "Effect": "Allow"
+      },
+      {
+        "Action": [
+          "dynamodb:UpdateItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query"
+        ],
+        "Resource": ["arn:aws:dynamodb:*:*:table/BANKS_LA_GENERAL_USER_TABLE"],
+        "Effect": "Allow"
+      },
+      {
+        "Action": [
+          "dynamodb:UpdateItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query"
+        ],
+        "Resource": ["arn:aws:dynamodb:*:*:table/BANKS_LA_TRANSACTIONS_TABLE"],
+        "Effect": "Allow"
+      },
+      {
+        "Action": [
+          "dynamodb:UpdateItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query"
+        ],
+        "Resource": ["arn:aws:dynamodb:*:*:table/DataForBuilding"],
+        "Effect": "Allow"
+      }
+    ]
+  }

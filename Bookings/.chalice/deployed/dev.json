@@ -1,0 +1,23 @@
+{
+  "resources": [
+    {
+      "name": "api_handler_role",
+      "resource_type": "iam_role",
+      "role_arn": "arn:aws:iam::471431566659:role/Bookings-dev-api_handler",
+      "role_name": "Bookings-dev-api_handler"
+    },
+    {
+      "name": "api_handler",
+      "resource_type": "lambda_function",
+      "lambda_arn": "arn:aws:lambda:us-west-2:471431566659:function:Bookings-dev"
+    },
+    {
+      "name": "rest_api",
+      "resource_type": "rest_api",
+      "rest_api_id": "pnk4toxeu0",
+      "rest_api_url": "https://pnk4toxeu0.execute-api.us-west-2.amazonaws.com/dev/"
+    }
+  ],
+  "schema_version": "2.0",
+  "backend": "api"
+}

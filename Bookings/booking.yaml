@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  BookingAPI:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: DataForBookings
+      AttributeDefinitions:
+        - AttributeName: "BookingsId"
+          AttributeType: "S"
+
+      KeySchema:
+        - AttributeName: "BookingsId"
+          KeyType: "HASH"
+
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
+
+Outputs:
+  TableName:
+    Value: !Ref "BookingAPI"
+    Description: "Name of the newly created DynamoDB table"
